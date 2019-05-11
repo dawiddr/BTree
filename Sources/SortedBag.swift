@@ -261,8 +261,8 @@ extension SortedBag {
     }
 
     /// Return an `Array` containing the non-`nil` results of mapping `transform` over `self`.
-    public func flatMap<T>(_ transform: (Element) throws -> T?) rethrows -> [T] {
-        return try tree.flatMap { try transform($0.0) }
+    public func compactMap<T>(_ transform: (Element) throws -> T?) rethrows -> [T] {
+        return try tree.compactMap { try transform($0.0) }
     }
 
     /// Return an `Array` containing the elements of `self`, in ascending order, that satisfy the predicate `includeElement`.
