@@ -232,7 +232,7 @@ class SortedBagTests: XCTestCase {
     func test_flatMap_Optional() {
         let c = 1000
         let bag = SortedBag(0 ..< c)
-        let r = bag.flatMap { $0 & 1 == 0 ? $0 / 2 : nil }
+        let r = bag.compactMap { $0 & 1 == 0 ? $0 / 2 : nil }
         assertEqualElements(r, 0 ..< 500)
     }
 

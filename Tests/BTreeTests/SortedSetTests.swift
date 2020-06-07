@@ -214,7 +214,7 @@ class SortedSetTests: XCTestCase {
     func test_flatMap_Optional() {
         let c = 1000
         let set = SortedSet(0 ..< c)
-        let r = set.flatMap { $0 & 1 == 0 ? $0 / 2 : nil }
+        let r = set.compactMap { $0 & 1 == 0 ? $0 / 2 : nil }
         assertEqualElements(r, 0 ..< 500)
     }
 
